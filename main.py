@@ -1,8 +1,6 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from wtforms import StringField
-
-
+from wtforms import StringField, PasswordField
 '''
 Red underlines? Install the required packages first: 
 Open the Terminal in PyCharm (bottom left). 
@@ -15,9 +13,10 @@ pip3 install -r requirements.txt
 
 This will install the packages from requirements.txt for this project.
 '''
+
 class LoginForm(FlaskForm):
-    email = StringField('Email')
-    password = StringField('Password')
+    email = StringField(label='Email')
+    password = PasswordField(label='Password')
 
 app = Flask(__name__)
 app.secret_key = "any-string-you-want-just-keep-it-secret"
